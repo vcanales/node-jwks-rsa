@@ -24,7 +24,7 @@ module.exports.fastifyJwtSecret = (options) => {
   return function secretProvider(req, decoded, cb) {
     // Only RS256 is supported.
     if (!decoded.header || decoded.header.alg !== 'RS256') {
-      return cb(null, null);
+      return cb(new Error('only RS256 is supported'), null);
     }
 
     client.getSigningKey(decoded.header.kid, (err, key) => {
