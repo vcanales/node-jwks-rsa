@@ -4,7 +4,6 @@ import * as errors from './errors';
 import { hapiJwt2Key, hapiJwt2KeyAsync } from './integrations/hapi';
 import { expressJwtSecret } from './integrations/express';
 import { fastifyJwtSecret } from './integrations/fastify';
-import { hapiJwt2Key } from './integrations/hapi';
 import { koaJwtSecret } from './integrations/koa';
 
 module.exports = (options) => {
